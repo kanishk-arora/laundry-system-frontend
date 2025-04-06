@@ -14,7 +14,13 @@ function Home() {
 
 function MachinePage({ machine }) {
   const handlePay = () => {
-    window.location.href = `https://buy.stripe.com/test_00g5nn9R9clQ4tGfYZ?machine=${machine}`;
+      const machineLinks = {
+        "Washing Machine 1": "https://buy.stripe.com/test_aEUcP1aFMcx1bgQ4gg",
+        "Washing Machine 2": "https://buy.stripe.com/test_8wM4iv4ho1Sn4Ss9AB",
+        "Dryer": "https://buy.stripe.com/test_14kaGTaFM54z0Cc7su"
+        };
+
+    window.location.href = machineLinks[machine];
   };
 
   return (
