@@ -15,7 +15,7 @@ function Home() {
 function MachinePage({ machine }) {
    const handlePay = () => {
        const machineLinks = {
-         "Washing Machine 1": "https://buy.stripe.com/test_14kaGT9BI0Oj4Ss6or",
+         "Washing Machine 1": "https://buy.stripe.com/test_aEUcP1aFMcx1bgQ4gg",
          "Washing Machine 2": "https://buy.stripe.com/test_8wM4iv4ho1Sn4Ss9AB",
          "Dryer": "https://buy.stripe.com/test_14kaGTaFM54z0Cc7su"
          };
