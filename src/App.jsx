@@ -13,15 +13,22 @@ function Home() {
 }
 
 function MachinePage({ machine }) {
-  const handlePay = () => {
-      const machineLinks = {
-        "Washing Machine 1": "https://buy.stripe.com/test_14kaGT9BI0Oj4Ss6or",
-        "Washing Machine 2": "https://buy.stripe.com/test_8wM4iv4ho1Sn4Ss9AB",
-        "Dryer": "https://buy.stripe.com/test_14kaGTaFM54z0Cc7su"
-        };
+  const handlePay = async () => {
+  const res = await fetch("https://b7665179-852e-4f62-b87d-9146d475ccb4-00-z2x56s1xe6z3.janeway.replit.dev/create-checkout-session", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ machine })
+  });
 
-    window.location.href = machineLinks[machine];
-  };
+  const data = await res.json();
+  if (data.url) {
+    window.location.href = data.url;
+  } else {
+    alert("Error creating checkout session");
+    console.error(data);
+  }
+};
+
 
   return (
     <div style={{ textAlign: 'center', padding: '20px' }}>
